@@ -10,13 +10,17 @@ import (
 
 // Phone ...
 type Phone struct {
-	Name string `json:"name"`
+	Age      int    `json:"age"`
+	ID       string `json:"id"`
+	ImageURL string `json:"imageUrl"`
+	Name     string `json:"name"`
+	Snippet  string `json:"snippet"`
 }
 
 var allPhones []Phone
 
 func setup() {
-	data, err := ioutil.ReadFile("phones.json")
+	data, err := ioutil.ReadFile("exhibit-d/phones.json")
 	if err != nil {
 		fmt.Println("Error reading phones.json")
 		os.Exit(1)
